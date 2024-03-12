@@ -1,0 +1,45 @@
+package PBO_M5;
+
+public class MatakuliahMain {
+	
+	public static void main(String[] args) {
+		// Create objek matakuliah
+		Matakuliah mk1 = new Matakuliah("001", "Algoritma Pemograman 1", "A", 3);
+		Matakuliah mk2 = new Matakuliah("002", "Algoritma Pemograman 2", "BC", 3);
+		Matakuliah mk3 = new Matakuliah("003", "Pemograman Berorientasi Objek", "B", 3);
+		
+		//Tampilkan daftar matakuliah
+		System.out.println("--- DAFTAR MATAKULIAH ---");
+		System.out.println(mk1.display());
+		System.out.println(mk2.display());
+		System.out.println(mk3.display());
+		
+		// Menghitung IPK
+		double ipk = hitungIPK(mk1, mk2, mk3);
+        System.out.println("--- Nilai IPK ---");
+        System.out.println("IPK: " + ipk);
+    }
+
+    // Metode untuk menghitung IPK tanpa menggunakan array
+    static double hitungIPK(Matakuliah... matakuliahArray) {
+        double totalNilaiSKS = 0;
+        int totalSKS = 0;
+
+        for (Matakuliah mk : matakuliahArray) {
+            double nilaiIndex = mk.nilaiIndex();
+            int sks = mk.getSKS();
+
+            totalNilaiSKS += nilaiIndex * sks;
+            totalSKS += sks;
+        }
+
+        if (totalSKS == 0) {
+            return 0;
+        }
+
+        return totalNilaiSKS / totalSKS;
+    }
+		
+		// Rumus : (Index nilai*SKS)+(Index Nilai*SKS)+..+(Index Nilai*SKS)/total_SKS
+
+}
