@@ -1,0 +1,21 @@
+package PBO_M11;
+
+public class InheritanceMain {
+    public static void main(String[] args) {
+        try {
+            Mahasiswa mhs1 = new Mahasiswa("1001", "Ade Sukendar", "Bandung");
+            Mahasiswa mhs2 = new Mahasiswa("1002", "Nagar Rasyid Erdiansyah", "Bandung");
+            Mahasiswa mhs3 = new Mahasiswa("1004", "Dadan Abdurahman", "Sumatera");
+            Mahasiswa mhs4 = new Mahasiswa("1009", "Asep Sukasep", "Kalimantan");
+            Mahasiswa mhs5 = new Mahasiswa("10141", "Dudun Sulaeman", "Sumatera");
+            System.out.println("--- DATA MAHASISWA ---");
+    		System.out.println(mhs1.getNrp()+" - "+mhs1.getNama()+" - "+mhs1.getAlamat());
+    		System.out.println(mhs2.getNrp()+" - "+mhs2.getNama()+" - "+mhs2.getAlamat());
+    		System.out.println(mhs3.getNrp()+" - "+mhs3.getNama()+" - "+mhs3.getAlamat());
+    		System.out.println(mhs4.getNrp()+" - "+mhs4.getNama()+" - "+mhs4.getAlamat());
+    		System.out.println(mhs5.getNrp()+" - "+mhs5.getNama()+" - "+mhs5.getAlamat());
+        } catch (IllegalArgumentException e) {
+            System.out.println(e.getMessage());
+        }
+    }
+}
