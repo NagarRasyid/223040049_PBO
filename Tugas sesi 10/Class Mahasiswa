@@ -1,0 +1,31 @@
+package PBO_M11;
+
+public class Mahasiswa extends Orang {
+    private String nrp;
+    
+    public Mahasiswa(String nrp, String nama, String alamat) {
+        super(nama, alamat);
+        if (validasiNRP(nrp)) {
+            setNrp(nrp);
+        } else {
+            throw new IllegalArgumentException("NRP tidak valid");
+        }
+    }
+    
+    public String getNrp() {
+        return nrp;
+    }
+    
+    public void setNrp(String nrp) {
+        if (validasiNRP(nrp)) {
+            this.nrp = nrp;
+        } else {
+            throw new IllegalArgumentException("NRP tidak valid");
+        }
+    }
+    
+    private boolean validasiNRP(String nrp) {
+        return nrp.matches("\\d{4}");
+    }
+    
+}
