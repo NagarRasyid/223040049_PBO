@@ -1,0 +1,18 @@
+package PBO_M12;
+
+public class PembayaranTunai extends Pembayaran {
+    private double uangDiterima;
+
+    public PembayaranTunai(double jumlah, double uangDiterima) {
+        super(jumlah);
+        this.uangDiterima = uangDiterima;
+    }
+
+    @Override
+    public void proses() {
+        double kembalian = uangDiterima - jumlah;
+        System.out.println("Pembayaran tunai sebesar: " + jumlah);
+        System.out.println("Uang diterima: " + uangDiterima);
+        System.out.println("Kembalian: " + kembalian);
+    }
+}
