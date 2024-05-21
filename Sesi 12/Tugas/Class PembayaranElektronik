@@ -1,0 +1,20 @@
+package PBO_M12;
+
+public abstract class PembayaranElektronik extends Pembayaran {
+    protected String noRekening;
+    protected String bank;
+
+    public PembayaranElektronik(double jumlah, String noRekening, String bank) {
+        super(jumlah);
+        this.noRekening = noRekening;
+        this.bank = bank;
+    }
+
+    public String getNoRekening() {
+        return noRekening;
+    }
+
+    public String getBank() {
+        return bank;
+    }
+}
