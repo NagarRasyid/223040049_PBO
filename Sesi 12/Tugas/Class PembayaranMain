@@ -1,0 +1,14 @@
+package PBO_M12;
+
+public class PembayaranMain {
+    public static void main(String[] args) {
+        PembayaranTunai pembayaranTunai = new PembayaranTunai(50000, 100000);
+        KartuKredit kartuKredit = new KartuKredit(250000, "1234567890", "1111-2222-3333-4444", "123");
+
+        System.out.println("== Pembayaran Tunai ==");
+        pembayaranTunai.proses();
+
+        System.out.println("\n== Pembayaran Kartu Kredit ==");
+        kartuKredit.proses();
+    }
+}
